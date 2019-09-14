@@ -12,10 +12,11 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "laravel/ui": "^1.0"
+        "laravel/ui": "^1.0",
+        "mews/captcha": "^3.0"
     },
     "require-dev": {
-        "filp/whoops": "^2.0",
+        "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
