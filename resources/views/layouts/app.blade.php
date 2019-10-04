@@ -34,6 +34,34 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                    @auth
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   Menu <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{!! route('artikel.index')!!}" class="btn btn-primary">{{ __('Artikel') }}</a>
+                                    <a class="dropdown-item" href="{!! route('berita.index')!!}" class="btn btn-primary">{{ __('Berita') }}</a>
+                                    <a class="dropdown-item" href="{!! route('galeri.index')!!}" class="btn btn-primary">{{ __('Galeri') }}</a>
+                                    <a class="dropdown-item" href="{!! route('pengumuman.index')!!}" class="btn btn-primary">{{ __('Pengumuman') }}</a>
+                                </div>
+                                
+                        @endauth
+
+                        @auth
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                  K Menu <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{!! route('kategori_artikel.index')!!}" class="btn btn-primary">{{ __('Kategori Artikel') }}</a>
+                                    <a class="dropdown-item" href="{!! route('kategori_berita.index')!!}" class="btn btn-primary">{{ __('Kategori Berita') }}</a>
+                                    <a class="dropdown-item" href="{!! route('kategori_galeri.index')!!}" class="btn btn-primary">{{ __('Kategori Galeri') }}</a>
+                                    <a class="dropdown-item" href="{!! route('kategori_pengumuman.index')!!}" class="btn btn-primary">{{ __('Kategori Pengumuman') }}</a>
+                                </div>
+                                
+                        @endauth
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -76,5 +104,12 @@
             @yield('content')
         </main>
     </div>
+
+    <script
+            src="http://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+            @yield('scripts')
 </body>
 </html>
