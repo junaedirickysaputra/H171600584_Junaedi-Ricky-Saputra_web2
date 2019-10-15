@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center bg-info">Tambah Galeri</div>
-             <div class="card-body">   
-             	<form method="post" action="{!! route('galeri.store') !!}"> 
-             	@include('galeri.form')
-
-             	</form>
+                <div class="card-header text-center bg-info">Edit Berita</div>
+             
+             <div class="card-body">
+                {!! Form::model($berita, ['route' => ['berita.update', $berita->id],'method' => 'patch']) !!}
+             	@include('berita.form')
+             	{!! Form::close() !!}
             </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
     <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
 <script>
     $( document ).ready(function() {
-        CKEDITOR.replace( 'keterangan' );
+        CKEDITOR.replace( 'isi' );
     });
     </script>
 @endsection

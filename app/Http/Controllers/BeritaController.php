@@ -9,10 +9,11 @@ use App\KategoriBerita;
 class BeritaController extends Controller
 {
     function index(){
-        $berita=berita::all();
+        $Berita=Berita::all();
 
-        return view ('berita.index',compact('berita'));
+        return view ('berita.index',compact('Berita'));
     }
+
     public function show($id)
     {
     
@@ -28,13 +29,51 @@ class BeritaController extends Controller
 
     	return view( 'berita.create',compact('KategoriBerita'));
     }
+
     public function store(Request $request)
     {
     	$input= $request->all();
     	
-    	berita::create($input);
+    	Berita::create($input);
 
     	return redirect(route('berita.index'));
+    }
+
+    public function edit($id)
+    {
+        $berita=berita::find($id);
+    	$KategoriBerita=KategoriBerita::pluck('nama','id');
+
+        if (empty($berita))
+        { return redirect(route('berita.index')); }
+
+        return view( 'berita.edit',compact( 'berita','KategoriBerita'));
+    }
+
+    public function update($id,Request $request)
+    {
+    
+    	$berita=Berita::find($id);
+        $input= $request->all();
+
+        if (empty($berita))
+        { return redirect(route('berita.index')); }
+
+        $berita->update($input);
+        return redirect(route('berita.index'));
+        
+    }
+
+    public function destroy($id)
+    {
+    
+    	$berita=Berita::find($id);
+
+        if (empty($berita))
+        { return redirect(route('berita.index')); }
+
+        $berita->delete();
+        return redirect(route('berita.index'));
     }
 
 }

@@ -9,9 +9,9 @@ use App\KategoriGaleri;
 class GaleriController extends Controller
 {
     function index(){
-        $galeri=galeri::all();
+        $Galeri=Galeri::all();
 
-        return view ('galeri.index',compact('galeri'));
+        return view ('galeri.index',compact('Galeri'));
     }
     public function show($id)
     {
@@ -32,9 +32,46 @@ class GaleriController extends Controller
     {
     	$input= $request->all();
     	
-    	artikel::create($input);
+    	galeri::create($input);
 
     	return redirect(route('galeri.index'));
+    }
+
+    public function edit($id)
+    {
+        $galeri=galeri::find($id);
+    	$KategoriGaleri=KategoriGaleri::pluck('nama','id');
+
+        if (empty($galeri))
+        { return redirect(route('galeri.index')); }
+
+        return view( 'galeri.edit',compact( 'galeri','KategoriGaleri'));
+    }
+
+    public function update($id,Request $request)
+    {
+    
+    	$galeri=Galeri::find($id);
+        $input= $request->all();
+
+        if (empty($galeri))
+        { return redirect(route('galeri.index')); }
+
+        $galeri->update($input);
+        return redirect(route('galeri.index'));
+        
+    }
+
+    public function destroy($id)
+    {
+    
+    	$galeri=Galeri::find($id);
+
+        if (empty($galeri))
+        { return redirect(route('galeri.index')); }
+
+        $galeri->delete();
+        return redirect(route('galeri.index'));
     }
 
 }

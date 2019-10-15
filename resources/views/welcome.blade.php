@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Hayy</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #ffffff;
-                color: #000000;
+                background-color: #151B54;
+                color: #3BB9FF;
                 font-family: 'Nunito', sans-serif;
                 font-weight: bold ;
                 font-style: bold ;
@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Zen KANAYA
                 </div>
 
                 <div class="links">
@@ -94,6 +94,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://www.facebook.com/JunaediShinigami">FB</a>
                 </div>
             </div>
         </div>

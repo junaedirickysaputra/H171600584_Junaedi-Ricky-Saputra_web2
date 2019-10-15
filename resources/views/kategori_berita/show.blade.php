@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Kategori Berita</div>
+                <div class="card-header text-center">Kategori Berita</div>
 
                 <div class="card-body">
                 <table class="table table-bordered">
